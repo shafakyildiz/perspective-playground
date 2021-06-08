@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <div id="app">
+      <main>
+        <section class="settings">
+          <div class="settings-container">
+            <label for="">{{perspective}} px;</label>
+            <input type="range" min="0" max="999" v-model="perspective" />
+
+            <label for="">{{rotateX}}: 0deg;</label>
+            <input type="range" min="-180" max="180" v-model="rotateX" />
+
+            <label for="">{{rotateY}}: 0deg;</label>
+            <input type="range" min="-180" max="180" v-model="rotateY" />
+
+            <label for="">{{rotateZ}}: 0deg;</label>
+            <input type="range" min="-180" max="180" v-model="rotateZ" />
+
+            <button type="button" @click.prevent="reset">Reset</button>
+            <button type="button" @click.prevent="copy">Copy</button>
+          </div>
+        </section>
+
+        <section class="output">
+          <div class="box-container">
+            <div class="box" :style="box"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
